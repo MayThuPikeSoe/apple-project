@@ -1,0 +1,32 @@
+.hamburger.open {
+  align-items: end;
+  text-align: end;
+  margin: 20px;
+}
+.hamburger.open .line {
+  transform: rotate(45deg) translateY(4px);
+  background: #000;
+
+  z-index: 99 !important;
+}
+
+.hamburger.open .line2 {
+  transform: rotate(-45deg) translateY(-4px);
+  background: #000000;
+  z-index: 99 !important;
+}
+.header {
+  height: 50px;
+  transition: 1s ease;
+}
+.header.open {
+  height: 100vh !important;
+  top: 0 !important;
+  transition: 0.5s ease;
+}
+.header.open .icon {
+  display: none !important;
+}
+.header.open .menu_list {
+  justify-content: end !important;
+}
