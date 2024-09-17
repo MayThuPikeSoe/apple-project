@@ -1,0 +1,13 @@
+.loop {
+  animation: loop 30s linear infinite both;
+  padding-bottom: 30px;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

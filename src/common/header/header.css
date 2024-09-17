@@ -18,6 +18,7 @@
 .header {
   height: 50px;
   transition: 1s ease;
+  z-index: 9999 !important;
 }
 .header.open {
   height: 100vh !important;

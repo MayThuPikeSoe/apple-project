@@ -3,3 +3,8 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+html,
+body {
+  min-width: 100% !important;
+  overflow-x: hidden;
+}

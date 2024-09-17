@@ -1,0 +1,8 @@
+
+.menu.open {
+  display: block;
+}
+
+.icon.open{
+    transform: rotate(180deg);
+}
