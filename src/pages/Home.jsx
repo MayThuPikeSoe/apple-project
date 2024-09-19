@@ -76,7 +76,7 @@ const Home = () => {
     },
   ];
   return (
-    <div>
+    <div >
       <Header />
       <section className="pre_order sm:h-[700px] h-[600px] w-[100%] overflow-hidden relative flex flex-col">
         <a href="" className="h-[700px] py-[37px]">
@@ -90,11 +90,11 @@ const Home = () => {
             Available starting 9.20 <br />
             Apple Intelligence coming this fall <sup>2</sup>
           </p>
-          <div className="flex justify-center items-center gap-10 bottom-10 absolute w-[100%]">
+          <div className="flex justify-center items-center gap-10 bottom-10 absolute w-[100%] z-50">
             <button className="bg-blue-600 w-28 h-10 text-white rounded-[30px] items-center   border-none">
               Learn more
             </button>
-            <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600  hover:text-white  ">
+            <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600 hover:bg-blue-600 hover:text-white  ">
               Pre-order
             </button>
           </div>
@@ -132,14 +132,14 @@ const Home = () => {
             Apple Intelligence coming this fall <sup>3</sup>
           </p>
           <div
-            className="flex justify-center items-center gap-10 bottom-10 absolute w-[100%] aos-init aos-animate"
+            className="flex justify-center items-center gap-10 bottom-10 absolute w-[100%] z-50 aos-init aos-animate"
             data-aos="fade-down"
             data-aos-duration="1000"
           >
             <button className="bg-blue-600 w-28 h-10 text-white rounded-[30px] items-center   border-none">
               Learn more
             </button>
-            <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600  hover:text-white  ">
+            <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600 hover:bg-blue-600  hover:text-white  ">
               Pre-order
             </button>
           </div>
@@ -176,17 +176,18 @@ const Home = () => {
           </div>
 
           <div
-            className="flex justify-center items-center gap-10 bottom-10 absolute w-[100%] aos-init aos-animate "
+            className="flex justify-center z-50 items-center gap-10 bottom-10 absolute w-[100%] aos-init aos-animate "
             data-aos="fade-down"
             data-aos-duration="1000"
           >
-            <button className="bg-blue-600 w-28 h-10 text-white rounded-[30px] items-center   border-none">
+            <button className="bg-blue-600 w-28 h-10 text-white rounded-[30px] items-center border-none">
               Learn more
             </button>
-            <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600  hover:text-white  ">
+            <button className="hover:bg-blue-600 hover:text-white  border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600 ">
               Pre-order
             </button>
           </div>
+
           <div className="absolute top-0 left-0 sm:h-[100%] h-[100%] w-[100%]">
             <div
               className="lg:bg-[url('/images/hero-apple-large.jpg')] absolute top-0 right-auto bottom-0  bg-[url('/images/hero-apple-small.jpg')] bg-cover bg-center w-[100%] "
@@ -200,7 +201,7 @@ const Home = () => {
         </a>
       </section>
       {/* images */}
-      <section className=" my-5">
+      <section className=" my-5 ">
         <div className="grid sm:grid-cols-2 gap-5  grid-cols-1 w-[100%] h-[100%] px-5">
           {imageCards.map((card) => {
             return (
@@ -221,11 +222,11 @@ const Home = () => {
                     {card.description2}
                     <sup>3</sup>
                   </p>
-                  <div className="flex justify-center items-center gap-10 bottom-20 absolute w-[100%]">
+                  <div className="flex justify-center items-center gap-10 bottom-20 absolute w-[100%] z-50">
                     <button className="bg-blue-600 w-28 h-10 text-white rounded-[30px] items-center   border-none">
                       Learn more
                     </button>
-                    <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600  hover:text-white  ">
+                    <button className="border-blue-600 border rounded-[30px] w-28 h-10 transition text-blue-600 hover:bg-blue-600  hover:text-white  ">
                       Pre-order
                     </button>
                   </div>
@@ -257,16 +258,24 @@ const Home = () => {
         </div>
       </section>
       {/* auto play */}
-      <section className="flex loop w-auto overflow-visible gap-3">
-        {autoImages.map((img) => {
-          return (
+      <section className="flex loop w-auto overflow-visible gap-3 my-5 relative">
+        {autoImages.map((img) => (
+          <div key={img.id} className="relative inline-block  img">
             <img
-              key={img.id}
               src={img.image}
-              className="min-w-[450px] h-[230px]"
+              className="min-w-[450px] h-[230px] cursor-pointer hover:opacity-40 relative"
             />
-          );
-        })}
+            <div className="absolute left-[30%] img_btn ">
+              <button
+                className=" w-32 h-10 bg-white rounded-[20px] z-50 aos-init aos-animate"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                Listen
+              </button>
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );

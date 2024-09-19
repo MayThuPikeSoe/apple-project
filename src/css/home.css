@@ -1,3 +1,20 @@
+.img {
+  transition: 0.5s;
+}
+
+.img_btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+ bottom: 0;
+}
+.img:hover .img_btn {
+  opacity: 1 !important;
+  bottom: 35% !important;
+  visibility: visible !important;
+  z-index: 99 !important;
+}
+
 .loop {
   animation: loop 30s linear infinite both;
   padding-bottom: 30px;

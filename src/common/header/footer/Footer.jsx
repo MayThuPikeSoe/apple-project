@@ -21,7 +21,45 @@ export const Footer = () => {
       title: "Account",
       menu: ["Manage Your Apple ID", "Apple Store Account", "iCloud.com"],
     },
-    // Add more sections as needed
+    {
+      id: 4,
+      title: "Apple Store",
+      menu: [
+        "Find a Store",
+        "Genius Bar",
+        "Today at Apple",
+        "Group Reservations",
+        "apple Camp",
+        "apple Store App",
+        "Certified Refurbished",
+        "Apple Trade in",
+        "Financing",
+        "Carrier Deals at apple",
+      ],
+    },
+    {
+      id: 5,
+      title: "For Business",
+      menu: ["Apple and Business", "Shop for Business"],
+    },
+    {
+      id: 6,
+      title: "Apple Values",
+      menu: [
+        "Accessibility",
+        "Education",
+        "Environment",
+        "Inclusion and Diversity",
+        "Privacy",
+        "Racial Equity and Justice",
+        "Supply Chain",
+      ],
+    },
+    {
+      id: 7,
+      title: "Apple Wallet",
+      menu: ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"],
+    },
   ];
 
   const clickMenu = (e) => {
@@ -31,7 +69,7 @@ export const Footer = () => {
   };
 
   return (
-    <div className="flex lg:flex-row flex-col container gap-10 justify-center my-12">
+    <div className="flex lg:flex-row flex-col container justify-center  lg:gap-10 gap-2 lg:my-12 my-5">
       {footerData.map((section) => (
         <div
           key={section.id}
@@ -67,8 +105,8 @@ export const Footer = () => {
               {section.menu.map((item, index) => (
                 <li key={index}>
                   <a
-                    href={`/${item.toLowerCase()}`}
-                    data-analytics-title={item.toLowerCase()}
+                  // href={`/${item.toLowerCase()}`}
+                  // data-analytics-title={item.toLowerCase()}
                   >
                     {item}
                   </a>
